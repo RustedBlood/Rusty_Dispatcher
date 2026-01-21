@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Диспетчер задач</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <div class="app-container">
+            <!-- Левое меню -->
+            <nav class="sidebar">
+                <div class="menu-item active" data-tab="tasks">Задачи</div>
+                <div class="menu-item" data-tab="load">Нагрузка</div>
+            </nav>
+
+            <!-- Основной контент -->
+            <main class="content">
+                <!-- Вкладка: Задачи -->
+                <section id="tasks" class="tab active">
+                    <h2>Текущие процессы</h2>
+                    <table class="process-table">
+                        <thead>
+                            <tr>
+                                <th>PID</th>
+                                <th>Имя</th>
+                                <th>CPU (%)</th>
+                                <th>Память (MB)</th>
+                                <th>Действие</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Данные будут подгружаться динамически -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Вкладка: Нагрузка -->
+                <section id="load" class="tab">
+                    <h2>Системная нагрузка</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">CPU</div>
+                            <div class="metric-value" id="cpu-usage">— %</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Память</div>
+                            <div class="metric-value" id="mem-usage">
+                                — MB / — MB
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Процессов</div>
+                            <div class="metric-value" id="proc-count">—</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
